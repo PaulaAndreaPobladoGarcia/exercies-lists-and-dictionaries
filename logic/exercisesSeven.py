@@ -11,8 +11,21 @@
 #| Total              |  Coste |
 
 import json
-def exericisesSeven():
 
-  while True: 
-    articulo= input ("introduce el nombre del articulo (O 'Fin' para terminar): ")
-     if articulo 
+def exericisesSeven():
+    archivo = "exercisesFourDict"
+    try:
+        with open(archivo, "r") as f:
+            cesta = json.load(f)
+    except FileNotFoundError:
+        cesta = {}  
+
+    while True:
+        articulo = input("Introduce el nombre del artículo: ")
+        
+        try:
+            precio = float(input(f"Introduce el precio del {articulo}: "))
+        except ValueError:
+            print("Por favor, introduce un precio válido.")
+            continue
+

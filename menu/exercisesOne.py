@@ -1,4 +1,4 @@
-from logic.exercisiesOne import save_course, search_currency
+from logic.exercisesOne import save_course, search_currency
 
 
 def designOneList():

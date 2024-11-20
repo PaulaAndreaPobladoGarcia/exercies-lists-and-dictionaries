@@ -2,8 +2,8 @@
 #  y muestre por pantalla la misma fecha en formato `dd de <mes> de aaaa`
 #  donde `<mes>` es el nombre del mes.
 import json
-def read_file():
-    with open ("databases/exercisesFourList.Json", "r") as file:
+def read_file(path):
+    with open ("databases/"[path], "r") as file:
        data = file.read()
        convertirList = json.loads(data)
        return convertirList

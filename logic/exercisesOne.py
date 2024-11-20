@@ -1,9 +1,9 @@
-#Escribir un programa que almacene las asignaturas de un curso 
+a#Escribir un programa que almacene las asignaturas de un curso 
 # (por ejemplo Matemáticas, Física, Química, Historia y Lengua) 
 # en una lista y la muestre por pantalla.
 import json
-def read_file():
-    with open("databases/exercisesOneList.json", "r") as file:
+def read_file(path):
+    with open(f"databases/{path}", "r") as file:
         data = file.read()
         convertirList = json.loads(data)
         return convertirList
@@ -27,7 +27,7 @@ def save_course(course):
 # la divisa no está en el diccionario.
        
 def search_currency(currency):
-    data = read_file("exercisesOneDict.json")        
+    data = read_file("exercisesOneDict.json")       
     if (data.get(currency)):
         return data.get(currency)
     else:
